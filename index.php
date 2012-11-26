@@ -117,6 +117,15 @@
                 width: 600
             });
             
+                  
+            //Gestion du clik sur image
+            alert('ok');
+            //Ou img
+            $('#image').click(function(e) {
+                var offset = $(this).offset();
+                alert(e.clientX - offset.left);
+                alert(e.clientY - offset.top);
+            });
             
     });
         
