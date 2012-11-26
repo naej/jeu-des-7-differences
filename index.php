@@ -23,6 +23,33 @@
             //$('#yourDiv').dialog({modal:true}); // setup dialog. 
             //$('#yourDiv').dialog('open');//open dialog
             
+                      var tabIndices = new Array;
+            tabIndices["vierge1",1]="Indices 1";
+            tabIndices["vierge1",2]="Indices 1";
+            tabIndices["vierge1",3]="Indices 1";
+            tabIndices["vierge2",1]="Indices 1";
+            tabIndices["vierge2",2]="Indices 1";
+            tabIndices["vierge2",3]="Indices 1";
+            tabIndices["vierge3",1]="Indices 1";
+            tabIndices["vierge3",2]="Indices 1";
+            tabIndices["vierge3",3]="Indices 1";
+            tabIndices["vierge4",1]="Indices 1";
+            tabIndices["vierge4",2]="Indices 1";
+            tabIndices["vierge4",3]="Indices 1";
+            tabIndices["vierge5",1]="Indices 1";
+            tabIndices["vierge5",2]="Indices 1";
+            tabIndices["vierge5",3]="Indices 1";
+            tabIndices["vierge6",1]="Indices 1";
+            tabIndices["vierge6",2]="Indices 1";
+            tabIndices["vierge6",3]="Indices 1";
+            tabIndices["vierge7",1]="Indices 1";
+            tabIndices["vierge7",2]="Indices 1";
+            tabIndices["vierge7",3]="Indices 1";
+            
+  
+            
+            
+            document.getElementById("div_jeu").style.display = "none";
             
             //Fonction comparer
             $("#bt_comparer").click(function(){
@@ -119,7 +146,6 @@
             
                   
             //Gestion du clik sur image
-            alert('ok');
             //Ou img
             $('#image').click(function(e) {
                 var offset = $(this).offset();
@@ -127,11 +153,13 @@
                 alert(e.clientY - offset.top);
             });
             
-    });
-        
-          
+            //Cacher un div 
+            $('#img_demarrer').click(function(){
+                document.getElementById("div_accueil").style.display = "none";
+                document.getElementById("div_jeu").style.display = "block";
+            });            
+        });
         </script>
-        
         <title></title>
     </head>
     <body>
@@ -195,13 +223,11 @@
         
         <div id="div_accueil">            
             <img src="" alt="img_contact"/>  
-            <img src="" alt="img_demarrer"/>
+            <img src="" id="img_demarrer" alt="img_demarrer"/>
             <img src="" alt="img_aide"/>
         </div>
         <div id="div_jeu">
-            
-            
-            
+            Je suis le jeu 
         </div>
         
     </body>
