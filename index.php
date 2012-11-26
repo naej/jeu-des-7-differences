@@ -26,9 +26,9 @@
             
             //Fonction comparer
             $("#bt_comparer").click(function(){
-                $("#comparer").dialog('open');
+                $("#div_comparer").dialog('open');
             });
-            $( "#comparer" ).dialog({
+            $( "#div_comparer" ).dialog({
                 autoOpen: false,
                 resizable: false,
                 width: 400,
@@ -45,9 +45,9 @@
 
            //Fonction Abandonner
             $("#bt_abandonner").click(function(){
-                $("#abandonner").dialog('open');
+                $("#div_abandonner").dialog('open');
             });
-            $( "#abandonner" ).dialog({
+            $( "#div_abandonner" ).dialog({
                 autoOpen: false,
                 resizable: false,
                 modal:true,
@@ -71,9 +71,9 @@
             //Fonction Victoire
             //A modifier Pour activer l'événement lorsque toutes les vierges ont été corrigés
             $("#bt_victoire").click(function(){
-                $("#victoire").dialog('open');
+                $("#div_victoire").dialog('open');
             });
-            $( "#victoire" ).dialog({
+            $( "#div_victoire" ).dialog({
                 autoOpen: false,
                 resizable: false,
                 modal:true,
@@ -92,7 +92,33 @@
                             }
                     }]
             });
- });
+            
+            //Fonction ViergeComplete
+            //A modifier Pour activer l'événement lorsque toutes les erreurs d'une vierge est trouvé
+            $("#bt_viergeComplete").click(function(){
+                $("#div_viergeComplete").dialog('open');
+            });
+            $( "#div_viergeComplete" ).dialog({
+                autoOpen: false,
+                resizable: false,
+                modal:true,
+                width: 400
+            });
+            
+            //Fonction Contact
+            //A gérer le button envoyé pour le mail
+            $("#bt_contact").click(function(){
+                $("#div_contact").dialog('open');
+            });
+            $( "#div_contact" ).dialog({
+                autoOpen: false,
+                resizable: false,
+                modal:true,
+                width: 600
+            });
+            
+            
+    });
         
           
         </script>
@@ -101,24 +127,47 @@
     </head>
     <body>
         
+ 
+        <button id="bt_contact">Contact</button>
+        <div id="div_contact" title="Contact">
+<pre>
+    <input required="required" type="text" name="input_nom" size="40"> 
+    <input required="required" type="text" name="input_prenom" size="40"> 
+    <input required="required" type="email" name="input_mail" size="40"> 
+    <textarea required="required" cols="41" rows="5">
+
+    </textarea>
+    <button>Envoyer</button>
+</pre>
+        </div>
+        
+        
         <button id="bt_comparer">Comparer</button>
-        <div id="comparer" title="Comparaison des deux vierges">
+        <div id="div_comparer" title="Comparaison des deux vierges">
             <img src="image/viergeOriginal.png"> 
             <img src="image/viergeEnCours.png">
         </div>
         
         <button id="bt_abandonner">Abandonner</button>
-        <div id="abandonner" title="Abandon">
+        <div id="div_abandonner" title="Abandon">
             Voulez-vous quitter la partie en cours ?
         </div>
         
         
         <button id="bt_victoire" title="Victoire">Victoire</button>
-        <div id="victoire">
+        <div id="div_victoire">
             Victoire vous avez gagné 
         </div>
 
-        <!--<div id="indices" class="popup_block">
+        <button id="bt_viergeComplete" title="Victoire">Vierge Compléte</button>
+        <div id="div_viergeComplete">
+            Vous avez trouvé toutes les erreurs de cette vierge  
+        </div>
+        
+        
+              <!--
+        <button id="bt_indices" title="Victoire">Indices</button>
+        <div id="indices">
             Indices 
             <br>
             <article><aside>Indice 1</aside>
@@ -131,10 +180,20 @@
             
             </article>
         </div>
-        <div id="jeu">
+        
+       
+        -->
+        
+        <div id="div_accueil">            
+            <img src="" alt="img_contact"/>  
+            <img src="" alt="img_demarrer"/>
+            <img src="" alt="img_aide"/>
         </div>
-        <div id="viergeComplete">
-            Vous avez trouvé toutes les erreurs de cette vierge  
-        </div>-->
+        <div id="div_jeu">
+            
+            
+            
+        </div>
+        
     </body>
 </html>
