@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="index.css" type="text/css" media="screen">        
+        
+        
+        <link href="./jquery-ui/css/smoothness/jquery-ui-1.9.1.custom.css" rel="stylesheet" type="text/css"/>
+        <link href="./jquery-ui/css/smoothness/jquery-ui-1.9.1.custom.min.css" rel="stylesheet" type="text/css"/>
+        
+        <script type="text/javascript" src="./jquery-ui/js/jquery-1.8.2.js"></script>
+        <script type="text/javascript" src="./jquery-ui/js/jquery-1.9.1.custom.js"></script>
+        <script type="text/javascript" src="./jquery-ui/js/jquery-ui-1.9.1.custom.min.js"></script>
+        
+      
+       <!-- <script type="text/javascript" src="./jquery-ui/js/jquery-1.8.3.min.js"></script>
+         iosSlider plugin -->
+	<script type="text/javascript" src="./jquery-ui/jquery.roundabout.js"></script>
+        
+                
+        <script type="text/javascript">
+        $(document).ready(function () {            
+            $('#slider').roundabout();
+        });
+        $(document).ready(function () {
+            
+            //<script type="text/javascript" src="index.js">
+            //$("#yourDiv").dialog({closeText:'hide'});
+            //$('#yourDiv').dialog({modal:true}); // setup dialog. 
+            //$('#yourDiv').dialog('open');//open dialog
+            
+            var tabIndices = new Array;
+            tabIndices["vierge1",1]="Indices 1";
+            tabIndices["vierge1",2]="Indices 1";
+            tabIndices["vierge1",3]="Indices 1";
+            tabIndices["vierge2",1]="Indices 1";
+            tabIndices["vierge2",2]="Indices 1";
+            tabIndices["vierge2",3]="Indices 1";
+            tabIndices["vierge3",1]="Indices 1";
+            tabIndices["vierge3",2]="Indices 1";
+            tabIndices["vierge3",3]="Indices 1";
+            tabIndices["vierge4",1]="Indices 1";
+            tabIndices["vierge4",2]="Indices 1";
+            tabIndices["vierge4",3]="Indices 1";
+            tabIndices["vierge5",1]="Indices 1";
+            tabIndices["vierge5",2]="Indices 1";
+            tabIndices["vierge5",3]="Indices 1";
+            tabIndices["vierge6",1]="Indices 1";
+            tabIndices["vierge6",2]="Indices 1";
+            tabIndices["vierge6",3]="Indices 1";
+            tabIndices["vierge7",1]="Indices 1";
+            tabIndices["vierge7",2]="Indices 1";
+            tabIndices["vierge7",3]="Indices 1";
+            
+  
+            
+            
+            document.getElementById("div_jeu").style.display = "none";
+            
+            //Fonction comparer
+            $("#bt_comparer").click(function(){
+                $("#div_comparer").dialog('open');
+            });
+            $( "#div_comparer" ).dialog({
+                autoOpen: false,
+                resizable: false,
+                width: 400,
+                buttons: [{
+                    text: "Fermer",
+                    click: function() {
+                        $( this ).dialog( "close" );
+                        }
+                    }]
+            });
+            $('#comparer').dialog({modal:true}); // setup dialog. 
+           // $('#comparer').dialog('open');//open dialog
+      
+
+           //Fonction Abandonner
+            $("#bt_abandonner").click(function(){
+                $("#div_abandonner").dialog('open');
+            });
+            $( "#div_abandonner" ).dialog({
+                autoOpen: false,
+                resizable: false,
+                modal:true,
+                width: 400,
+                buttons: [{
+                    text: "Oui",
+                    click: function() {
+                        opener=self; 
+                        self.close(); 
+                        }
+                    },
+                    {
+                        text: "Non", 
+                        click: function(){
+                            $(this).dialog("close");
+                        }
+                    }]
+            });
+        
+        
+            //Fonction Victoire
+            //A modifier Pour activer l'événement lorsque toutes les vierges ont été corrigés
+            $("#bt_victoire").click(function(){
+                $("#div_victoire").dialog('open');
+            });
+            $( "#div_victoire" ).dialog({
+                autoOpen: false,
+                resizable: false,
+                modal:true,
+                width: 400,
+                buttons: [{
+                        text: "Rejouer", 
+                        click: function(){
+                            $(this).dialog("close");
+                            //Ajouter le fait de rejouer 
+                        }
+                    },{
+                        text: "Quitter",
+                        click: function() {
+                            opener=self; 
+                            self.close(); 
+                            }
+                    }]
+            });
+            
+            //Fonction ViergeComplete
+            //A modifier Pour activer l'événement lorsque toutes les erreurs d'une vierge est trouvé
+            $("#bt_viergeComplete").click(function(){
+                $("#div_viergeComplete").dialog('open');
+            });
+            $( "#div_viergeComplete" ).dialog({
+                autoOpen: false,
+                resizable: false,
+                modal:true,
+                width: 400
+            });
+            
+            //Fonction Contact
+            //A gérer le button envoyé pour le mail
+            $("#bt_contact").click(function(){
+                $("#div_contact").dialog('open');
+            });
+            $( "#div_contact" ).dialog({
+                autoOpen: false,
+                resizable: false,
+                modal:true,
+                width: 600
+            });
+            
+                  
+            //Gestion du clik sur image
+            //Ou img
+            $('#testImage').click(function(e) {
+                var offset = $(this).offset();
+                clickX = e.clientX - offset.left
+                clickY = e.clientY - offset.top
+                if(clickX>342 && clickX<380)
+                {
+                    if(clickY>286 && clickY<323)
+                    {
+                        var imgg = document.createElement("img");
+                        imgg.src = "v.gif";
+                        
+                        this.appendChild(imgg);
+                        alert("ok");
+                    }
+                }
+                
+                
+                //alert(e.clientX - offset.left);
+                //alert(e.clientY - offset.top);
+                
+            });
+            
+            //Cacher un div 
+            $('#img_demarrer').click(function(){
+                document.getElementById("div_accueil").style.display = "none";
+                document.getElementById("div_jeu").style.display = "block";
+            });    
+            
+
+
+        });
+        </script>
+        <title></title>
+    </head>
+    <body>
+        
+        <img id="testImage" src="images/EO2.png" />
+ 
+        
+        
+        
+        
+        <button id="bt_contact">Contact</button>
+        <div id="div_contact" title="Contact">
+<pre>
+    <input required="required" type="text" name="input_nom" size="40"> 
+    <input required="required" type="text" name="input_prenom" size="40"> 
+    <input required="required" type="email" name="input_mail" size="40"> 
+    <textarea required="required" cols="41" rows="5">
+
+    </textarea>
+    <button>Envoyer</button>
+</pre>
+        </div>
+        
+        
+        <button id="bt_comparer">Comparer</button>
+        <div id="div_comparer" title="Comparaison des deux vierges">
+            <img src="image/viergeOriginal.png"> 
+            <img src="image/viergeEnCours.png">
+        </div>
+        
+        <button id="bt_abandonner">Abandonner</button>
+        <div id="div_abandonner" title="Abandon">
+            Voulez-vous quitter la partie en cours ?
+        </div>
+        
+        
+        <button id="bt_victoire" title="Victoire">Victoire</button>
+        <div id="div_victoire">
+            Victoire vous avez gagné 
+        </div>
+
+        <button id="bt_viergeComplete" title="Victoire">Vierge Compléte</button>
+        <div id="div_viergeComplete">
+            Vous avez trouvé toutes les erreurs de cette vierge  
+        </div>
+        
+        
+              <!--
+        <button id="bt_indices" title="Victoire">Indices</button>
+        <div id="indices">
+            Indices 
+            <br>
+            <article><aside>Indice 1</aside>
+
+            </article>
+            <article><aside>Indice 2</aside>
+            
+            </article>
+            <article><aside>Indice 3</aside>
+            
+            </article>
+        </div>
+        
+       
+        -->
+              
+       <!-- <script type="text/javascript" src="./jquery-ui/js/jquery-1.8.3.min.js"></script>
+         iosSlider plugin 
+	<script type="text/javascript" src="./jquery-ui/jquery.roundabout.js"></script>
+        -->
+        <div id="div_accueil">            
+            <img src="./images/contact.png" alt="img_contact"/>  
+            <img src="./images/demarrer_jeu.png" id="img_demarrer" alt="img_demarrer"/>
+            <img src="./images/aide.png" alt="img_aide"/>
+        </div>
+
+        <div id="div_jeu">
+
+        </div>
+        <div id="slide-container">
+            <ul id="slider">
+                <li><img src="./images/EO.png" /></li>
+                <li><img src="./images/EO2.png" /></li>
+                <li><img src="./images/EO3.png" /></li>
+                <li><img src="./images/EO4.png" /></li>
+                <li><img src="./images/EO5.png" /></li>
+                <li><img src="./images/EO6.png" /></li>
+                <li><img src="./images/EO7.png" /></li>
+            </ul>
+        </div>
+    </body>
+</html>

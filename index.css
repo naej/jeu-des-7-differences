@@ -1,0 +1,47 @@
+.roundabout-holder {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	height: 5em;
+	width: 5em;
+}
+
+.roundabout-moveable-item {
+	height: 100%;
+	width: 100%;
+	cursor: pointer;
+	background-color: red;
+	border: 1px solid #999;
+}
+
+.roundabout-in-focus {
+	cursor: auto;
+}
+
+#slider
+{
+	width:100%;
+	height:20em;
+}
+
+#slider li
+{
+	width:18em;
+	height:24em;
+}
+
+#slider li img
+{
+	width:100%;
+	height:100%;
+}
+
+#slide-container
+{
+	width:40%;
+	height:400px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:150px;
+	text-align:center;
+}
